@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+HarunoUmi:wght@500&display=swap');
+
+:root
+{
+  /* Typograph */
+  --text-small: 400 18px 'Kaisei HarunoUmi', serif;
+  --text-card: 400 15px 'Kaisei HarunoUmi', serif;
+
+  /* Color */
+  --current-color: #b3b6ff; 
+  --hover-color: #d85e5e;
+}
+
+*
+{
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+body, html
+{
+  width: 100%;
+  height: 100%;
+
+  background: #3d3d3d;
+}
+
+header
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  width: 100%;
+  height: 70px;
+
+  .search-container
+  {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 15rem;
+    height: 50%;
+
+    border: 2px solid var(--current-color);
+    border-radius: 8px;
+
+    margin-left: -4rem;
+    padding: 0 5px;
+
+  }
+
+  input[type='search']
+  {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 8px;
+
+    border: none;
+    outline: none;
+    background: none;
+
+    color: var(--current-color);
+  }
+
+  .search
+  {
+    border: none;
+  }
+}
+
+main
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .card
+  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    
+    width: 32rem;
+    padding: 3rem 0;
+
+    border: 2px solid var(--current-color);
+    border-radius: 8px;
+
+    transition: .2s;
+
+    &:hover
+    {
+      border: 2px solid var(--hover-color);
+    }
+
+
+    .poke-name
+    {
+      font: var(--text-small);
+      color: var(--current-color);
+
+      text-transform: uppercase;
+      cursor: default;
+      transition: .2s;
+
+      &:hover
+      {
+        color: var(--hover-color);
+      }      
+    }
+
+    .abilities
+    {
+      font: var(--text-card);
+      color: var(--current-color);
+
+      text-transform: uppercase;
+      line-height: 23px;
+      letter-spacing: 2px;
+
+      cursor: default;
+
+      transition: .2s;
+
+      &:hover
+      {
+        color: var(--hover-color);
+      }
+    }
+  }
+}
