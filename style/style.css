@@ -32,7 +32,8 @@ header {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
-  height: 70px;
+  height: 10vh;
+  padding: 0 2rem;
 }
 
 header .search-container {
@@ -45,12 +46,12 @@ header .search-container {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 15rem;
-  height: 50%;
+  width: 260px;
+  height: 46%;
   border: 2px solid var(--current-color);
   border-radius: 8px;
-  margin-left: -4rem;
-  padding: 0 5px;
+  margin-left: -5.5rem;
+  padding: 0 8px;
 }
 
 header input[type='search'] {
@@ -60,24 +61,42 @@ header input[type='search'] {
   border: none;
   outline: none;
   background: none;
-  color: var(--current-color);
+  color: #fff;
+  font-size: 17px;
 }
 
-header .search {
-  border: none;
+@media (max-width: 500px) {
+  header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    height: 20vh;
+  }
+  header .search-container {
+    margin: 0;
+    height: 40px;
+  }
 }
 
 main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 75vh;
 }
 
 main .card {
@@ -94,16 +113,21 @@ main .card {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 32rem;
+  width: 42rem;
+  min-height: 40vh;
   padding: 3rem 0;
   border: 2px solid var(--current-color);
   border-radius: 8px;
   -webkit-transition: .2s;
   transition: .2s;
+  -webkit-box-shadow: 1px 1px 5px var(--current-color);
+          box-shadow: 1px 1px 5px var(--current-color);
 }
 
 main .card:hover {
   border: 2px solid var(--hover-color);
+  -webkit-box-shadow: 3px 3px 6px var(--hover-color);
+          box-shadow: 3px 3px 6px var(--hover-color);
 }
 
 main .card .poke-name {
@@ -119,6 +143,10 @@ main .card .poke-name:hover {
   color: var(--hover-color);
 }
 
+main .card img {
+  width: 150px;
+}
+
 main .card .abilities {
   font: var(--text-card);
   color: var(--current-color);
@@ -132,5 +160,21 @@ main .card .abilities {
 
 main .card .abilities:hover {
   color: var(--hover-color);
+}
+
+@media (max-width: 500px) {
+  main {
+    width: 100%;
+    height: 70vh;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  main .card {
+    width: 90%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
