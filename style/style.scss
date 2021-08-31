@@ -34,7 +34,9 @@ header
   justify-content: space-between;
   
   width: 100%;
-  height: 70px;
+  height: 10vh;
+
+  padding: 0 2rem;
 
   .search-container
   {
@@ -42,14 +44,14 @@ header
     align-items: center;
     justify-content: space-between;
 
-    width: 15rem;
-    height: 50%;
+    width: 260px;
+    height: 46%;
 
     border: 2px solid var(--current-color);
     border-radius: 8px;
 
-    margin-left: -4rem;
-    padding: 0 5px;
+    margin-left: -5.5rem;
+    padding: 0 8px;
 
   }
 
@@ -64,20 +66,34 @@ header
     outline: none;
     background: none;
 
-    color: var(--current-color);
+    color: #fff;
+    font-size: 17px;
   }
 
-  .search
-  {
-    border: none;
+  @media (max-width: 500px){
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    height: 20vh;
+
+    .search-container
+    {
+      margin: 0;
+
+      height: 40px;
+    }
   }
 }
 
 main
 {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 75vh;
 
   .card
   {
@@ -86,7 +102,8 @@ main
     align-items: center;
     justify-content: space-between;
     
-    width: 32rem;
+    width: 42rem;
+    min-height: 40vh;
     padding: 3rem 0;
 
     border: 2px solid var(--current-color);
@@ -94,9 +111,12 @@ main
 
     transition: .2s;
 
+    box-shadow: 1px 1px 5px var(--current-color);
+
     &:hover
     {
       border: 2px solid var(--hover-color);
+      box-shadow: 3px 3px 6px var(--hover-color);
     }
 
 
@@ -113,6 +133,11 @@ main
       {
         color: var(--hover-color);
       }      
+    }
+
+    img
+    {
+      width: 150px;
     }
 
     .abilities
@@ -134,4 +159,17 @@ main
       }
     }
   }
+
+  @media (max-width: 500px){
+    width: 100%;
+    height: 70vh;
+
+    align-items: center;
+    justify-content: center;
+    
+    .card
+    {
+      width: 90%
+    }
+  };
 }

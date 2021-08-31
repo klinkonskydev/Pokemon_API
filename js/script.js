@@ -32,23 +32,32 @@ function show(poke){
 
     html += 
     `
-      <li class="abilities">${ability}</li>
+      <p class="abilities">${ability}</p>
     `;
 
     output = `
     <div class="card">
       <h2 class="poke-name">#${poke.id} - ${poke.name}</h2> 
       <img src="${poke.sprites.front_shiny}" />
-      <ul>
+      <div align="center">
         ${html}
-      </ul>
+      </div>
     </div>
     `
-  }
+  };
   
   html = '';
 
   DOMElements.main.innerHTML = output;
 };
+
+function keyboardType(e){
+  if( !e.charCode === 13 ) return;
+  if( e.charCode === 13 ) {
+    charSearch()
+  };
+};
+
+DOMElements.search.addEventListener('keypress', keyboardType)
 
 getContent();
